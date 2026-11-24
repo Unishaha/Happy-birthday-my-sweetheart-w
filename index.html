@@ -1,0 +1,1343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Happy Birthday, My Bachu 💗</title>
+
+<style>
+:root{
+  --pink:#ff5fae;
+  --purple:#a66cff;
+  --cyan:#69e5ff;
+  --bg:#090817;
+  --panel:rgba(255,255,255,.065);
+  --border:rgba(255,255,255,.12);
+  --text:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;
+  background:
+    radial-gradient(ellipse at 15% 5%,#43205c 0,transparent 35%),
+    radial-gradient(ellipse at 90% 80%,#172b55 0,transparent 35%),
+    var(--bg);
+  color:var(--text);
+  font-family:Segoe UI,Arial,sans-serif;
+  overflow-x:hidden;
+}
+button,input,textarea,select{font:inherit}
+button{
+  border:1px solid #ffffff22;
+  border-radius:12px;
+  padding:11px 16px;
+  margin:4px;
+  background:linear-gradient(120deg,var(--pink),var(--purple));
+  color:white;
+  font-weight:700;
+  cursor:pointer;
+  transition:.2s;
+}
+button:hover{transform:translateY(-2px);filter:brightness(1.15)}
+button:active{transform:scale(.97)}
+input,textarea,select{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  background:#171329;
+  border:1px solid #75518f;
+  border-radius:10px;
+  color:white;
+}
+textarea{min-height:100px;resize:vertical}
+a{color:#ffb6df}
+#particles{
+  position:fixed;inset:0;width:100%;height:100%;
+  pointer-events:none;z-index:0;
+}
+.app{
+  position:relative;z-index:1;
+  display:grid;
+  grid-template-columns:245px minmax(0,1fr);
+  min-height:100vh;
+}
+.sidebar{
+  position:sticky;top:0;height:100vh;
+  overflow-y:auto;
+  padding:20px 13px;
+  background:rgba(10,8,25,.86);
+  backdrop-filter:blur(20px);
+  border-right:1px solid var(--border);
+}
+.brand{
+  text-align:center;
+  padding:12px 5px 22px;
+  border-bottom:1px solid var(--border);
+  margin-bottom:15px;
+}
+.brand .logo{font-size:40px}
+.brand h2{
+  font-size:19px;
+  background:linear-gradient(90deg,#ff91c8,#c6a1ff);
+  -webkit-background-clip:text;color:transparent;
+}
+.brand p{font-size:11px;color:#bca9d1;margin-top:5px}
+.menu-label{
+  color:#a995c0;font-size:10px;
+  letter-spacing:2px;padding:12px 10px 7px;
+}
+.menu{
+  display:flex;flex-direction:column;gap:5px;
+}
+.menu button{
+  width:100%;margin:0;text-align:left;
+  display:flex;align-items:center;gap:11px;
+  padding:11px 12px;
+  background:transparent;
+  border:1px solid transparent;
+  color:#d9cde8;font-weight:500;
+  border-radius:11px;font-size:13px;
+}
+.menu button:hover{
+  background:#ffffff10;border-color:#ffffff15;
+  transform:translateX(3px);
+}
+.menu button.active{
+  background:linear-gradient(110deg,#ff5fae55,#a66cff55);
+  border-color:#ff8dce88;color:white;
+  box-shadow:0 0 20px #b65cff20;
+}
+.main{min-width:0;padding:25px 30px 50px}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;margin-bottom:22px;
+}
+.topbar .eyebrow{font-size:11px;color:#bca9d1;letter-spacing:2px}
+.topbar h1{font-size:clamp(21px,3vw,32px)}
+.status{
+  border:1px solid #ffffff20;background:#ffffff0b;
+  border-radius:30px;padding:9px 13px;
+  font-size:12px;color:#ffd2e9;white-space:nowrap;
+}
+.page{
+  display:none;
+  animation:pageIn .35s ease;
+}
+.page.active{display:block}
+@keyframes pageIn{
+  from{opacity:0;transform:translateY(9px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.panel{
+  padding:25px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:22px;
+  backdrop-filter:blur(15px);
+  box-shadow:0 15px 50px #0003;
+}
+.panel h2{font-size:25px;color:#ffc0e0;margin-bottom:14px}
+.panel h3{color:#ffd3ed;margin:12px 0}
+.panel p{color:#e9dff2;line-height:1.7}
+.hero{
+  min-height:360px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 50% 20%,#ff70bc33,transparent 50%),
+    var(--panel);
+}
+.hero-art{font-size:90px;filter:drop-shadow(0 0 25px #ff70bc77)}
+.hero h2{
+  font-size:clamp(30px,5vw,54px);
+  background:linear-gradient(90deg,#ff9acb,#d2a9ff,#8deaff);
+  -webkit-background-clip:text;color:transparent;
+}
+.hero p{max-width:650px;margin:12px auto}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:13px;margin-top:15px;
+}
+.tile{
+  padding:17px;border:1px solid var(--border);
+  border-radius:15px;background:#ffffff09;
+}
+.center{text-align:center}
+.small{font-size:12px;color:#bba9d0}
+.big-emoji{font-size:85px;margin:15px}
+.gamebox{
+  padding:20px;margin-top:15px;
+  border:1px solid var(--border);
+  background:#130f25;border-radius:17px;text-align:center;
+}
+#musicPanel{
+  position:fixed;right:20px;bottom:18px;z-index:20;
+  width:255px;padding:15px;
+  border:1px solid #ffffff30;border-radius:18px;
+  background:#171027ed;backdrop-filter:blur(15px);
+  box-shadow:0 10px 40px #0009;
+}
+#musicPanel strong{display:block;color:#ffc0e0;margin-bottom:8px}
+#musicPanel input{padding:0;margin:9px 0}
+#musicPanel button{padding:8px 13px}
+#toast{
+  position:fixed;top:18px;left:50%;transform:translateX(-50%);
+  z-index:50;display:none;background:#743e91;
+  border:1px solid #ffffff40;border-radius:25px;
+  padding:12px 20px;box-shadow:0 10px 30px #0007;
+}
+#balloonArea,#catchArea{
+  height:230px;position:relative;overflow:hidden;
+  background:#211535;border-radius:15px;margin:12px 0;
+}
+.balloon,.heart{position:absolute;cursor:pointer;font-size:35px}
+.balloon{animation:float 2s infinite}
+.heart{font-size:30px}
+@keyframes float{50%{transform:translateY(-12px)}}
+.memorygrid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:8px;max-width:430px;margin:15px auto;
+}
+.memorycard{height:75px;font-size:25px;background:#39234f}
+.memorycard.done{opacity:.35;pointer-events:none}
+.gift{font-size:55px;text-align:center;cursor:pointer}
+#photoGrid img{
+  width:100%;height:190px;object-fit:cover;border-radius:12px;
+}
+#videoGrid iframe{
+  width:100%;aspect-ratio:16/9;border:0;border-radius:12px;
+}
+#cardCanvas{max-width:100%;border-radius:12px}
+
+/* Buddy designer */
+.buddy-stage{
+  width:270px;height:290px;margin:22px auto;
+  position:relative;display:flex;align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle,#70447f,#251535);
+  border:2px solid #ff9dce;border-radius:28px;
+  box-shadow:0 0 30px #ff65ad40;
+}
+.buddy{
+  position:relative;width:180px;height:225px;
+  display:flex;justify-content:center;align-items:flex-end;
+}
+.buddy-body{
+  position:absolute;width:105px;height:105px;
+  bottom:4px;left:37px;
+  background:#b97849;border-radius:48% 48% 35% 35%;
+  border:3px solid #75462e;
+}
+.buddy-head{
+  position:absolute;width:145px;height:137px;
+  left:17px;top:17px;background:#c88b5c;
+  border:3px solid #75462e;border-radius:48% 48% 45% 45%;
+  z-index:2;
+}
+.buddy-ear{
+  position:absolute;width:48px;height:55px;
+  background:#c88b5c;border:3px solid #75462e;
+  border-radius:50%;top:0;z-index:1;
+}
+.buddy-ear.left{left:15px}
+.buddy-ear.right{right:15px}
+.buddy-ear:after{
+  content:"";position:absolute;inset:9px;
+  background:#f3b2c9;border-radius:50%;
+}
+.buddy-eye{
+  position:absolute;width:11px;height:15px;
+  background:#291525;border-radius:50%;top:55px;
+}
+.buddy-eye.left{left:37px}
+.buddy-eye.right{right:37px}
+.buddy-muzzle{
+  position:absolute;width:58px;height:39px;
+  background:#f4d3b6;border-radius:50%;
+  left:40px;top:82px;
+}
+.buddy-nose{
+  position:absolute;width:15px;height:10px;
+  background:#54312c;border-radius:50%;
+  left:61px;top:85px;
+}
+.buddy-mouth{
+  position:absolute;width:18px;height:12px;
+  left:59px;top:96px;
+  border-bottom:2px solid #54312c;border-radius:50%;
+}
+.buddy-arm{
+  position:absolute;width:32px;height:62px;
+  background:#c88b5c;border:3px solid #75462e;
+  border-radius:30px;top:128px;z-index:1;
+}
+.buddy-arm.left{left:13px;transform:rotate(25deg)}
+.buddy-arm.right{right:13px;transform:rotate(-25deg)}
+#buddyCharacter.cat .buddy-head,
+#buddyCharacter.cat .buddy-ear,
+#buddyCharacter.cat .buddy-body,
+#buddyCharacter.cat .buddy-arm{background:#c5b6ce}
+#buddyCharacter.panda .buddy-head,
+#buddyCharacter.panda .buddy-body,
+#buddyCharacter.panda .buddy-arm{background:#f4f0f0}
+#buddyCharacter.panda .buddy-ear,
+#buddyCharacter.panda .buddy-ear:after{background:#28202c}
+#buddyCharacter.bunny .buddy-ear{
+  height:85px;width:38px;border-radius:50%;top:-42px;
+  background:#e6c6dc;
+}
+#buddyCharacter.bunny .buddy-ear:after{background:#ff9dc9}
+#buddyCharacter.bunny .buddy-head,
+#buddyCharacter.bunny .buddy-body,
+#buddyCharacter.bunny .buddy-arm{background:#f0d9e8}
+#buddyCharacter.cat .buddy-ear{
+  border-radius:12px 12px 4px 4px;transform:rotate(45deg);
+}
+#buddyCharacter.cat .buddy-ear.right{transform:rotate(-45deg)}
+#buddyCharacter.panda .buddy-eye{
+  width:23px;height:26px;background:#28202c;
+  border-radius:50%;top:49px;
+}
+#buddyCharacter.panda .buddy-eye:after{
+  content:"";position:absolute;width:7px;height:7px;
+  background:white;border-radius:50%;top:5px;left:5px;
+}
+#buddyAccessory{
+  position:absolute;z-index:5;font-size:43px;
+  pointer-events:none;display:none;
+}
+#buddyAccessory.ribbon{
+  display:block;top:24px;left:50%;
+  transform:translateX(-50%) rotate(-12deg);
+}
+#buddyAccessory.crown{
+  display:block;top:0;left:50%;transform:translateX(-50%);
+}
+#buddyAccessory.glasses{
+  display:block;top:88px;left:50%;
+  transform:translateX(-50%);font-size:39px;
+}
+#buddyAccessory.flower{display:block;top:45px;right:48px}
+#buddyAccessory.heart{display:block;top:120px;right:38px}
+#buddyAccessory.bowtie{
+  display:block;bottom:33px;left:50%;transform:translateX(-50%);
+}
+footer{text-align:center;color:#bba9d0;padding:30px}
+#fireworks{position:fixed;inset:0;pointer-events:none;z-index:30}
+
+@media(max-width:850px){
+  .app{display:block}
+  .sidebar{
+    position:sticky;top:0;width:100%;height:auto;
+    padding:9px;background:#0d0a1ef2;
+    border-right:0;border-bottom:1px solid var(--border);
+    z-index:15;
+  }
+  .brand{display:none}
+  .menu-label{display:none}
+  .menu{
+    flex-direction:row;overflow-x:auto;
+    gap:7px;padding:3px;
+  }
+  .menu button{
+    width:auto;min-width:max-content;
+    padding:10px 13px;font-size:12px;
+  }
+  .menu button:hover{transform:translateY(-2px)}
+  .main{padding:18px 13px 110px}
+  .topbar{margin-bottom:15px}
+}
+@media(max-width:500px){
+  .status{display:none}
+  .panel{padding:17px}
+  .panel h2{font-size:22px}
+  #musicPanel{width:205px;right:8px;bottom:8px}
+  .memorycard{height:60px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation:none!important;transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+</style>
+</head>
+
+<body>
+<canvas id="particles"></canvas>
+<canvas id="fireworks"></canvas>
+<div id="toast"></div>
+
+<div class="app">
+
+<aside class="sidebar">
+  <div class="brand">
+    <div class="logo">🎀</div>
+    <h2>BACHU'S WORLD</h2>
+    <p>A LITTLE WORLD MADE WITH LOVE</p>
+  </div>
+
+  <div class="menu-label">MAIN MENU</div>
+  <div class="menu" id="menu">
+    <button class="active" data-page="home">🏠 Home</button>
+    <button data-page="music">🎵 Music</button>
+    <button data-page="letter">💌 Birthday Letter</button>
+    <button data-page="cake">🎂 Birthday Cake</button>
+    <button data-page="candles">🕯️ Make a Wish</button>
+    <button data-page="balloons">🎈 Balloon Pop</button>
+    <button data-page="memory">🧠 Memory Game</button>
+    <button data-page="catch">💗 Catch Hearts</button>
+    <button data-page="quiz">❓ Birthday Quiz</button>
+    <button data-page="gallery">📸 Photo Gallery</button>
+    <button data-page="videos">🎬 Video Gallery</button>
+    <button data-page="gifts">🎁 Surprise Gifts</button>
+    <button data-page="jar">🏺 Memory Jar</button>
+    <button data-page="wishes">🌟 Birthday Wishes</button>
+    <button data-page="timeline">📅 Timeline</button>
+    <button data-page="card">💳 Card Maker</button>
+    <button data-page="buddy">🐻 Buddy Designer</button>
+    <button data-page="challenge">🏆 Challenges</button>
+    <button data-page="scrapbook">📖 Scrapbook</button>
+    <button data-page="riddle">🧩 Riddle</button>
+    <button data-page="wheel">🎡 Lucky Wheel</button>
+    <button data-page="compliments">🌸 Compliments</button>
+    <button data-page="notes">🔐 Secret Notes</button>
+    <button data-page="themes">🎨 Themes</button>
+    <button data-page="fireworksPage">🎆 Fireworks</button>
+  </div>
+</aside>
+
+<main class="main">
+  <div class="topbar">
+    <div>
+      <div class="eyebrow">WELCOME TO YOUR SPECIAL PLACE</div>
+      <h1 id="pageTitle">🏠 Home</h1>
+    </div>
+    <div class="status">✦ Birthday Edition 2026</div>
+  </div>
+
+  <!-- 1 HOME -->
+  <section class="page active" id="home">
+    <div class="panel hero">
+      <div class="hero-art">🎂💗🎉</div>
+      <h2>Happy Birthday, My Bachu!</h2>
+      <p>Your own little universe of happiness, games, memories and surprises.
+      Every tab has something special waiting for you.</p>
+      <button onclick="celebrate()">✨ Start the Celebration</button>
+      <p id="welcomeMessage"></p>
+    </div>
+    <div class="grid">
+      <div class="tile"><h3>💗 Your Special Day</h3><p>A little world made just for you.</p></div>
+      <div class="tile"><h3>🎁 25 Experiences</h3><p>Explore games, gifts and creative surprises.</p></div>
+      <div class="tile"><h3>✨ Your Memories</h3><p>Save little moments in your own birthday space.</p></div>
+    </div>
+  </section>
+
+  <!-- 2 MUSIC -->
+  <section class="page" id="music">
+    <div class="panel">
+      <h2>🎵 Your Birthday Song</h2>
+      <p>This is a real recorded song, not a computer-generated melody.
+      Press Play to listen. It will repeat when it reaches the end.</p>
+      <div class="gamebox">
+        <div class="big-emoji">🎧</div>
+        <h3>Birthday Song — Chris Trapper</h3>
+        <p class="small">English birthday song · Recorded track</p>
+        <audio id="birthdayAudio"
+          src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Chris_Trapper_-_Birthday_Song.ogg"
+          preload="metadata" loop></audio>
+        <button onclick="playSong()">▶ Play Song</button>
+        <button onclick="pauseSong()">⏸ Pause</button>
+        <button onclick="restartSong()">↻ Restart</button>
+        <p id="songStatus" class="small">Song ready. Press Play to listen.</p>
+        <label for="songVolume" class="small">Volume: <span id="songVolumeText">40%</span></label>
+        <input id="songVolume" type="range" min="0" max="100" value="40">
+        <p class="small">
+          Song by Chris Trapper, shared under
+          <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC BY 3.0</a>.
+          <a href="https://commons.wikimedia.org/wiki/File:Chris_Trapper_-_Birthday_Song.ogg" target="_blank" rel="noopener">Source and attribution</a>.
+        </p>
+      </div>
+      <p class="small">Note: Edge may block autoplay. If it does, press Play once. The song needs an internet connection.</p>
+    </div>
+  </section>
+
+  <!-- 3 LETTER -->
+  <section class="page" id="letter">
+    <div class="panel">
+      <h2>💌 A Birthday Letter for My Bachu</h2>
+      <p>
+        Happy birthday, my sweet Bachu! 💗 Today is your special day, and I hope it brings you more happiness than you can imagine. I made this little universe especially for your birthday, filled with surprises, games, memories and warm wishes.
+        <br><br>
+        I hope your new year of life is full of beautiful opportunities, exciting experiences and wonderful memories. May you discover new things, reach your goals and find countless reasons to smile.
+        <br><br>
+        Never stop believing in yourself. Even the biggest dreams begin with small steps. Take your time, enjoy the journey and remember that every little effort matters. You do not need to compare your journey with anybody else's.
+        <br><br>
+        I wish you mornings that begin with a smile, afternoons full of good surprises and peaceful nights. May your favourite songs sound even better, your favourite food taste extra delicious and your funniest moments become memories you laugh about for years.
+        <br><br>
+        May you always have people around you who appreciate your kindness, respect your dreams and encourage you to be yourself. May you have the confidence to try new things and the courage to keep learning.
+        <br><br>
+        I hope you get to enjoy all the little things that make life special: beautiful skies, favourite snacks, lovely messages, good music and unexpected reasons to laugh.
+        <br><br>
+        Remember that you are allowed to rest, learn, make mistakes and try again. You do not need to have everything figured out today. Your story is your own, and every chapter is worth enjoying.
+        <br><br>
+        On this birthday, I wish you happiness, good health, success in your studies and future plans, and many wonderful adventures. May your dreams grow bigger and your confidence grow stronger.
+        <br><br>
+        I hope this day gives you delicious cake, colourful balloons, lovely surprises and so many smiles. Every candle represents a new hope, and every birthday wish is a reminder that beautiful possibilities are waiting ahead.
+        <br><br>
+        Whenever you visit this website, I hope it reminds you that someone took time to create something for your special day. Open the gifts, play the games, make a birthday card and enjoy every little surprise.
+        <br><br>
+        Keep being curious, keep being kind and keep being wonderfully yourself. May your next chapter be brighter, happier and more exciting than the last.
+        <br><br>
+        Happy birthday once again, my Bachu! 🎂💗 Enjoy your day, take care of yourself and may all your good wishes find their way to you. Sending you a universe of birthday wishes, colourful balloons, sweet surprises and endless celebrations! 🎀✨
+      </p>
+    </div>
+  </section>
+
+  <!-- 4 CAKE -->
+  <section class="page" id="cake">
+    <div class="panel center">
+      <h2>🎂 Birthday Cake</h2>
+      <p>Tap the cake to cut it!</p>
+      <div class="big-emoji" id="cakeEmoji" onclick="cutCake()">🎂</div>
+      <p id="cakeMessage">Your cake is waiting!</p>
+      <button onclick="cutCake()">🔪 Cut the Cake</button>
+      <button onclick="resetCake()">Reset Cake</button>
+    </div>
+  </section>
+
+  <!-- 5 CANDLES -->
+  <section class="page" id="candles">
+    <div class="panel center">
+      <h2>🕯️ Make a Birthday Wish</h2>
+      <div class="big-emoji" id="candleDisplay">🕯️🕯️🕯️</div>
+      <p id="candleText">Make a wish and blow out the candles!</p>
+      <button onclick="blowCandles()">💨 Blow Candles</button>
+      <button onclick="relightCandles()">🔥 Relight</button>
+    </div>
+  </section>
+
+  <!-- 6 BALLOONS -->
+  <section class="page" id="balloons">
+    <div class="panel">
+      <h2>🎈 Balloon Pop Game</h2>
+      <p>Pop as many balloons as possible before time runs out!</p>
+      <div class="gamebox">
+        <p>Score: <b id="balloonScore">0</b></p>
+        <div id="balloonArea"></div>
+        <button onclick="startBalloons()">Start Game</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 MEMORY -->
+  <section class="page" id="memory">
+    <div class="panel">
+      <h2>🧠 Memory Match</h2>
+      <p>Find all six matching pairs.</p>
+      <div class="gamebox">
+        <p>Matches: <span id="matches">0</span>/6</p>
+        <div class="memorygrid" id="memoryGrid"></div>
+        <button onclick="newMemoryGame()">Restart Game</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 CATCH HEARTS -->
+  <section class="page" id="catch">
+    <div class="panel">
+      <h2>💗 Catch the Hearts</h2>
+      <p>Click the hearts before they disappear!</p>
+      <div class="gamebox">
+        <p>Score: <b id="heartScore">0</b></p>
+        <div id="catchArea"></div>
+        <button onclick="startHearts()">Start Game</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 QUIZ -->
+  <section class="page" id="quiz">
+    <div class="panel">
+      <h2>❓ Birthday Quiz</h2>
+      <div class="gamebox">
+        <p id="quizQuestion"></p>
+        <div id="quizAnswers"></div>
+        <p id="quizResult"></p>
+        <button onclick="nextQuiz()">Next Question</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 PHOTOS -->
+  <section class="page" id="gallery">
+    <div class="panel">
+      <h2>📸 Photo Gallery</h2>
+      <p>Select photos from your device to display them here.</p>
+      <input type="file" id="photoInput" accept="image/*" multiple>
+      <div class="grid" id="photoGrid"></div>
+    </div>
+  </section>
+
+  <!-- 11 VIDEOS -->
+  <section class="page" id="videos">
+    <div class="panel">
+      <h2>🎬 Video Gallery</h2>
+      <p>Paste a YouTube video link.</p>
+      <input id="videoUrl" placeholder="Paste YouTube URL">
+      <button onclick="addVideo()">Add Video</button>
+      <div class="grid" id="videoGrid"></div>
+    </div>
+  </section>
+
+  <!-- 12 GIFTS -->
+  <section class="page" id="gifts">
+    <div class="panel">
+      <h2>🎁 Surprise Gifts</h2>
+      <p>Choose a gift to reveal a message!</p>
+      <div class="grid">
+        <div class="tile gift" onclick="openGift(0)">🎁<p>Gift One</p></div>
+        <div class="tile gift" onclick="openGift(1)">🎀<p>Gift Two</p></div>
+        <div class="tile gift" onclick="openGift(2)">💝<p>Gift Three</p></div>
+      </div>
+      <p id="giftMessage" class="center"></p>
+    </div>
+  </section>
+
+  <!-- 13 MEMORY JAR -->
+  <section class="page" id="jar">
+    <div class="panel">
+      <h2>🏺 Memory Jar</h2>
+      <p>Save a favourite memory in your jar.</p>
+      <textarea id="memoryInput" placeholder="Write a lovely memory..."></textarea>
+      <button onclick="saveMemory()">Save Memory</button>
+      <div id="memoryList" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- 14 WISHES -->
+  <section class="page" id="wishes">
+    <div class="panel">
+      <h2>🌟 Birthday Wishes</h2>
+      <input id="wishInput" placeholder="Write a birthday wish...">
+      <button onclick="saveWish()">Save Wish</button>
+      <div id="wishList"></div>
+    </div>
+  </section>
+
+  <!-- 15 TIMELINE -->
+  <section class="page" id="timeline">
+    <div class="panel">
+      <h2>📅 Birthday Timeline</h2>
+      <input id="timelineDate" type="date">
+      <input id="timelineText" placeholder="Write a special moment...">
+      <button onclick="addTimeline()">Add Moment</button>
+      <div id="timelineList"></div>
+    </div>
+  </section>
+
+  <!-- 16 CARD -->
+  <section class="page" id="card">
+    <div class="panel">
+      <h2>💳 Birthday Card Maker</h2>
+      <input id="cardName" value="My Bachu" placeholder="Name">
+      <input id="cardMessage" value="Wishing you a magical birthday!" placeholder="Message">
+      <button onclick="drawCard()">Create Card</button>
+      <br><br>
+      <canvas id="cardCanvas" width="700" height="400"></canvas>
+      <br>
+      <button onclick="downloadCard()">Download Card</button>
+    </div>
+  </section>
+
+  <!-- 17 BUDDY -->
+  <section class="page" id="buddy">
+    <div class="panel center">
+      <h2>🐻 Birthday Buddy Designer</h2>
+      <p>Choose a character and dress it up with accessories!</p>
+
+      <div class="buddy-stage">
+        <div class="buddy bear" id="buddyCharacter">
+          <div class="buddy-ear left"></div>
+          <div class="buddy-ear right"></div>
+          <div class="buddy-body"></div>
+          <div class="buddy-arm left"></div>
+          <div class="buddy-arm right"></div>
+          <div class="buddy-head">
+            <div class="buddy-eye left"></div>
+            <div class="buddy-eye right"></div>
+            <div class="buddy-muzzle"></div>
+            <div class="buddy-nose"></div>
+            <div class="buddy-mouth"></div>
+          </div>
+        </div>
+        <div id="buddyAccessory"></div>
+      </div>
+
+      <h3 id="buddyName">Your Cute Bear</h3>
+      <p>Choose your character</p>
+      <button onclick="chooseCharacter('bear','Cute Bear')">🐻 Bear</button>
+      <button onclick="chooseCharacter('bunny','Lovely Bunny')">🐰 Bunny</button>
+      <button onclick="chooseCharacter('cat','Cute Cat')">🐱 Cat</button>
+      <button onclick="chooseCharacter('panda','Panda')">🐼 Panda</button>
+
+      <br><br>
+      <p>Choose an accessory</p>
+      <button onclick="dressBuddy('🎀','Ribbon','ribbon')">🎀 Ribbon</button>
+      <button onclick="dressBuddy('👑','Crown','crown')">👑 Crown</button>
+      <button onclick="dressBuddy('🕶️','Sunglasses','glasses')">🕶️ Glasses</button>
+      <button onclick="dressBuddy('🌸','Flower','flower')">🌸 Flower</button>
+      <button onclick="dressBuddy('❤️','Heart','heart')">❤️ Heart</button>
+      <button onclick="dressBuddy('🎀','Bow Tie','bowtie')">🎀 Bow Tie</button>
+
+      <br><br>
+      <button onclick="removeAccessory()">Remove Accessory</button>
+      <button onclick="resetBuddy()">Reset Buddy</button>
+      <p id="buddyMessage">Your character is ready for a makeover! ✨</p>
+    </div>
+  </section>
+
+  <!-- 18 CHALLENGES -->
+  <section class="page" id="challenge">
+    <div class="panel">
+      <h2>🏆 Birthday Challenges</h2>
+      <p>Complete your birthday challenge list!</p>
+      <div id="challengeList" class="tile"></div>
+      <p id="challengeProgress"></p>
+    </div>
+  </section>
+
+  <!-- 19 SCRAPBOOK -->
+  <section class="page" id="scrapbook">
+    <div class="panel">
+      <h2>📖 Birthday Scrapbook</h2>
+      <textarea id="scrapText" placeholder="Write your favourite memories..."></textarea>
+      <button onclick="downloadScrapbook()">Download Scrapbook</button>
+    </div>
+  </section>
+
+  <!-- 20 RIDDLE -->
+  <section class="page" id="riddle">
+    <div class="panel">
+      <h2>🧩 Birthday Riddle</h2>
+      <div class="gamebox">
+        <p>I have a face but no eyes, hands but no fingers. What am I?</p>
+        <input id="riddleAnswer" placeholder="Your answer">
+        <button onclick="checkRiddle()">Check Answer</button>
+        <p id="riddleResult"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 21 WHEEL -->
+  <section class="page" id="wheel">
+    <div class="panel center">
+      <h2>🎡 Lucky Wheel</h2>
+      <div class="gamebox">
+        <div id="wheelEmoji" class="big-emoji">🎡</div>
+        <p id="wheelResult">Spin to discover your surprise!</p>
+        <button onclick="spinWheel()">SPIN THE WHEEL</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 22 COMPLIMENTS -->
+  <section class="page" id="compliments">
+    <div class="panel center">
+      <h2>🌸 Compliment Generator</h2>
+      <div class="gamebox">
+        <div class="big-emoji">🌷</div>
+        <p id="complimentText">You make ordinary moments feel special. 💗</p>
+        <button onclick="newCompliment()">Another Compliment</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 23 NOTES -->
+  <section class="page" id="notes">
+    <div class="panel">
+      <h2>🔐 Secret Notes</h2>
+      <p class="small">Notes are saved in this browser, not encrypted or private from other people who can access this device.</p>
+      <textarea id="secretInput" placeholder="Write a note..."></textarea>
+      <button onclick="saveNote()">Save Note</button>
+      <div id="noteList"></div>
+    </div>
+  </section>
+
+  <!-- 24 THEMES -->
+  <section class="page" id="themes">
+    <div class="panel">
+      <h2>🎨 Choose Your Theme</h2>
+      <p>Change the colours of your birthday universe.</p>
+      <button onclick="setTheme('#ff65ad','#a879ff')">Pink Dream</button>
+      <button onclick="setTheme('#51d9ff','#7b7cff')">Ocean Magic</button>
+      <button onclick="setTheme('#a8ff9e','#48c9a4')">Mint Fantasy</button>
+      <button onclick="setTheme('#ffc66e','#ff7d7d')">Golden Sunset</button>
+    </div>
+  </section>
+
+  <!-- 25 FIREWORKS -->
+  <section class="page" id="fireworksPage">
+    <div class="panel center">
+      <h2>🎆 Birthday Fireworks</h2>
+      <div class="big-emoji">🎇</div>
+      <p>Finish your birthday adventure with a celebration!</p>
+      <button onclick="celebrate()">Launch Fireworks!</button>
+      <p id="fireworkMessage"></p>
+    </div>
+  </section>
+
+  <footer>Made with lots of birthday wishes, hearts and smiles. 💗<br>Happy Birthday, Bachu! 🎂</footer>
+</main>
+</div>
+
+<div id="musicPanel">
+  <strong>🎵 Birthday Song Player</strong>
+  <button onclick="playSong()">▶ Play</button>
+  <button onclick="pauseSong()">⏸ Pause</button>
+  <label class="small" for="songVolume">Volume: <span id="miniVolume">40%</span></label>
+  <input id="songVolume" type="range" min="0" max="100" value="40">
+  <p id="miniSongStatus" class="small">Ready to play 💗</p>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+function toast(message){
+  const t=$('toast');
+  t.textContent=message;t.style.display='block';
+  clearTimeout(window.toastTimer);
+  window.toastTimer=setTimeout(()=>t.style.display='none',2400);
+}
+function safeLoad(key){
+  try{return JSON.parse(localStorage.getItem(key)||'[]')}catch(e){return []}
+}
+function safeSave(key,value){
+  try{localStorage.setItem(key,JSON.stringify(value))}
+  catch(e){toast('Browser storage is full or unavailable.')}
+}
+
+/* TAB MENU: SHOW ONE PAGE AT A TIME */
+const pageNames={
+ home:'🏠 Home',music:'🎵 Music',letter:'💌 Birthday Letter',
+ cake:'🎂 Birthday Cake',candles:'🕯️ Make a Wish',
+ balloons:'🎈 Balloon Pop',memory:'🧠 Memory Game',
+ catch:'💗 Catch Hearts',quiz:'❓ Birthday Quiz',
+ gallery:'📸 Photo Gallery',videos:'🎬 Video Gallery',
+ gifts:'🎁 Surprise Gifts',jar:'🏺 Memory Jar',
+ wishes:'🌟 Birthday Wishes',timeline:'📅 Timeline',
+ card:'💳 Card Maker',buddy:'🐻 Buddy Designer',
+ challenge:'🏆 Challenges',scrapbook:'📖 Scrapbook',
+ riddle:'🧩 Riddle',wheel:'🎡 Lucky Wheel',
+ compliments:'🌸 Compliments',notes:'🔐 Secret Notes',
+ themes:'🎨 Themes',fireworksPage:'🎆 Fireworks'
+};
+function openPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('#menu button').forEach(b=>b.classList.remove('active'));
+  const page=$(id);
+  if(!page)return;
+  page.classList.add('active');
+  const btn=document.querySelector(`#menu button[data-page="${id}"]`);
+  if(btn){
+    btn.classList.add('active');
+    btn.scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});
+  }
+  $('pageTitle').textContent=pageNames[id]||'Birthday World';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('#menu button').forEach(btn=>{
+  btn.addEventListener('click',()=>openPage(btn.dataset.page));
+});
+
+/* REAL RECORDED SONG PLAYER */
+const birthdayAudio=$('birthdayAudio');
+birthdayAudio.volume=.4;
+birthdayAudio.loop=true;
+function updateSongStatus(message){
+  $('songStatus').textContent=message;
+  $('miniSongStatus').textContent=message;
+}
+async function playSong(){
+  try{
+    await birthdayAudio.play();
+    updateSongStatus('Playing Chris Trapper — Birthday Song 🎶');
+  }catch(error){
+    updateSongStatus('Could not start. Check your internet connection, then press Play again.');
+    toast('Song could not load. Check your internet connection.');
+  }
+}
+function pauseSong(){
+  birthdayAudio.pause();
+  updateSongStatus('Song paused.');
+}
+function restartSong(){
+  birthdayAudio.currentTime=0;
+  playSong();
+}
+$('songVolume').addEventListener('input',()=>{
+  const volume=Number($('songVolume').value)/100;
+  birthdayAudio.volume=volume;
+  $('songVolumeText').textContent=Math.round(volume*100)+'%';
+  $('miniVolume').textContent=Math.round(volume*100)+'%';
+});
+birthdayAudio.addEventListener('playing',()=>updateSongStatus('Song is playing 🎶'));
+birthdayAudio.addEventListener('pause',()=>{
+  if(birthdayAudio.currentTime>0)updateSongStatus('Song paused.');
+});
+birthdayAudio.addEventListener('error',()=>updateSongStatus('Song unavailable. Check your internet connection.'));
+/* Attempt autoplay. Edge may block it until a visitor clicks Play. */
+window.addEventListener('load',()=>{playSong()});
+
+/* PARTICLES */
+const pc=$('particles'),pctx=pc.getContext('2d');
+let particles=[];
+function resizeParticles(){
+  pc.width=innerWidth*devicePixelRatio;
+  pc.height=innerHeight*devicePixelRatio;
+  pctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+}
+function makeParticles(){
+  particles=Array.from({length:55},()=>({
+    x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+    r:Math.random()*2+1,s:Math.random()*.45+.15
+  }));
+}
+function animateParticles(){
+  pctx.clearRect(0,0,innerWidth,innerHeight);
+  particles.forEach(p=>{
+    p.y-=p.s;
+    if(p.y<0){p.y=innerHeight;p.x=Math.random()*innerWidth}
+    pctx.beginPath();pctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    pctx.fillStyle='rgba(255,170,220,.55)';pctx.fill();
+  });
+  requestAnimationFrame(animateParticles);
+}
+resizeParticles();makeParticles();animateParticles();
+addEventListener('resize',()=>{resizeParticles();makeParticles()});
+
+/* CAKE AND CANDLES */
+function cutCake(){
+  $('cakeEmoji').textContent='🍰';
+  $('cakeMessage').textContent='The cake has been cut! Enjoy your slice! 💗';
+  toast('Happy Birthday! 🎂');confettiBurst();
+}
+function resetCake(){
+  $('cakeEmoji').textContent='🎂';
+  $('cakeMessage').textContent='Your cake is waiting!';
+}
+function blowCandles(){
+  $('candleDisplay').textContent='💨✨💨';
+  $('candleText').textContent='Wish made! May your dreams come true!';
+  confettiBurst();
+}
+function relightCandles(){
+  $('candleDisplay').textContent='🕯️🕯️🕯️';
+  $('candleText').textContent='Candles are glowing again!';
+}
+
+/* BALLOON GAME */
+let balloonScore=0,balloonTimer=null;
+function startBalloons(){
+  clearInterval(balloonTimer);
+  balloonScore=0;$('balloonScore').textContent=0;
+  $('balloonArea').innerHTML='';
+  balloonTimer=setInterval(()=>{
+    const b=document.createElement('span');
+    b.className='balloon';b.textContent='🎈';
+    b.style.left=Math.random()*88+'%';
+    b.style.top=Math.random()*75+'%';
+    b.onclick=()=>{
+      balloonScore++;
+      $('balloonScore').textContent=balloonScore;
+      b.remove();
+    };
+    $('balloonArea').appendChild(b);
+    setTimeout(()=>b.remove(),1700);
+  },500);
+  setTimeout(()=>{
+    clearInterval(balloonTimer);
+    toast('Game finished! Score: '+balloonScore);
+  },15000);
+}
+
+/* MEMORY GAME */
+let firstCard=null,lockMemory=false,memoryMatches=0;
+function newMemoryGame(){
+  const symbols=['🎂','🎈','💗','🎁','⭐','🧁'];
+  const deck=[...symbols,...symbols].sort(()=>Math.random()-.5);
+  firstCard=null;lockMemory=false;memoryMatches=0;
+  $('matches').textContent=0;$('memoryGrid').innerHTML='';
+  deck.forEach(symbol=>{
+    const b=document.createElement('button');
+    b.className='memorycard';b.textContent='❔';b.dataset.symbol=symbol;
+    b.onclick=()=>{
+      if(lockMemory||b.classList.contains('done')||b===firstCard)return;
+      b.textContent=symbol;
+      if(!firstCard){firstCard=b;return}
+      if(firstCard.dataset.symbol===symbol){
+        firstCard.classList.add('done');b.classList.add('done');
+        firstCard=null;memoryMatches++;
+        $('matches').textContent=memoryMatches;
+        if(memoryMatches===6)toast('You found every pair! 🎉');
+      }else{
+        lockMemory=true;const old=firstCard;firstCard=null;
+        setTimeout(()=>{
+          old.textContent='❔';b.textContent='❔';lockMemory=false;
+        },700);
+      }
+    };
+    $('memoryGrid').appendChild(b);
+  });
+}
+newMemoryGame();
+
+/* CATCH HEARTS */
+let heartScore=0,heartTimer=null;
+function startHearts(){
+  clearInterval(heartTimer);
+  heartScore=0;$('heartScore').textContent=0;
+  $('catchArea').innerHTML='';
+  heartTimer=setInterval(()=>{
+    const h=document.createElement('span');
+    h.className='heart';h.textContent='💗';
+    h.style.left=Math.random()*90+'%';
+    h.style.top=Math.random()*80+'%';
+    h.onclick=()=>{
+      heartScore++;$('heartScore').textContent=heartScore;h.remove();
+    };
+    $('catchArea').appendChild(h);
+    setTimeout(()=>h.remove(),1200);
+  },550);
+  setTimeout(()=>{
+    clearInterval(heartTimer);
+    toast('Heart game finished! Score: '+heartScore);
+  },15000);
+}
+
+/* QUIZ */
+const quizData=[
+ ['What makes a birthday special?',['Happiness and memories','Only homework','Only presents'],0],
+ ['Which treat is a birthday classic?',['Birthday cake','A pencil','A shoe'],0],
+ ['What do people make before blowing candles?',['A wish','A shopping list','A timetable'],0],
+ ['Which symbol means celebration?',['🎉','🚪','📚'],0]
+];
+let quizIndex=0;
+function showQuiz(){
+  const q=quizData[quizIndex%quizData.length];
+  $('quizQuestion').textContent=q[0];
+  $('quizAnswers').innerHTML='';
+  q[1].forEach((answer,i)=>{
+    const b=document.createElement('button');
+    b.textContent=answer;
+    b.onclick=()=>{
+      $('quizResult').textContent=i===q[2]?
+        'Correct! You are amazing! 🎉':'Nice try! Give it another go!';
+    };
+    $('quizAnswers').appendChild(b);
+  });
+  $('quizResult').textContent='';
+}
+function nextQuiz(){quizIndex++;showQuiz()}
+showQuiz();
+
+/* PHOTO GALLERY */
+$('photoInput').addEventListener('change',e=>{
+  $('photoGrid').innerHTML='';
+  [...e.target.files].forEach(file=>{
+    if(!file.type.startsWith('image/'))return;
+    const img=document.createElement('img');
+    img.src=URL.createObjectURL(file);
+    img.alt='Birthday photo';
+    const box=document.createElement('div');
+    box.className='tile';box.appendChild(img);
+    $('photoGrid').appendChild(box);
+  });
+});
+
+/* VIDEO GALLERY */
+function addVideo(){
+  const value=$('videoUrl').value.trim();let id='';
+  try{
+    const u=new URL(value);
+    if(u.hostname.includes('youtu.be'))id=u.pathname.slice(1);
+    else if(u.hostname.includes('youtube.com'))id=u.searchParams.get('v')||u.pathname.split('/').pop();
+  }catch(e){}
+  if(!id||!/^[\w-]{6,}$/.test(id)){
+    toast('Enter a valid YouTube link.');return;
+  }
+  const frame=document.createElement('iframe');
+  frame.src='https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id);
+  frame.title='Birthday video';frame.allowFullscreen=true;
+  frame.loading='lazy';
+  const box=document.createElement('div');
+  box.className='tile';box.appendChild(frame);
+  $('videoGrid').appendChild(box);
+  $('videoUrl').value='';
+}
+
+/* GIFTS */
+const gifts=[
+  'May your days be full of laughter and wonderful memories! 💗',
+  'May every dream you work for get a little closer! ⭐',
+  'A giant birthday cheer just for you! 🎂🎉'
+];
+function openGift(i){
+  $('giftMessage').textContent=gifts[i];confettiBurst();
+}
+
+/* MEMORY JAR */
+function renderMemories(){
+  $('memoryList').innerHTML='';
+  safeLoad('bachu_memories').forEach(m=>{
+    const d=document.createElement('div');
+    d.className='tile';d.textContent='💗 '+m;
+    $('memoryList').appendChild(d);
+  });
+}
+function saveMemory(){
+  const v=$('memoryInput').value.trim();if(!v)return;
+  const a=safeLoad('bachu_memories');a.unshift(v);
+  safeSave('bachu_memories',a);
+  $('memoryInput').value='';renderMemories();toast('Memory saved!');
+}
+renderMemories();
+
+/* WISHES */
+function renderWishes(){
+  $('wishList').innerHTML='';
+  safeLoad('bachu_wishes').forEach(w=>{
+    const p=document.createElement('p');
+    p.className='tile';p.textContent='🌟 '+w;
+    $('wishList').appendChild(p);
+  });
+}
+function saveWish(){
+  const v=$('wishInput').value.trim();if(!v)return;
+  const a=safeLoad('bachu_wishes');a.unshift(v);
+  safeSave('bachu_wishes',a);
+  $('wishInput').value='';renderWishes();toast('Wish saved!');
+}
+renderWishes();
+
+/* TIMELINE */
+function renderTimeline(){
+  $('timelineList').innerHTML='';
+  safeLoad('bachu_timeline').forEach(item=>{
+    const d=document.createElement('div');
+    d.className='tile';
+    d.textContent='📅 '+item.date+' — '+item.text;
+    $('timelineList').appendChild(d);
+  });
+}
+function addTimeline(){
+  const date=$('timelineDate').value;
+  const text=$('timelineText').value.trim();
+  if(!date||!text){toast('Enter a date and a memory.');return}
+  const a=safeLoad('bachu_timeline');
+  a.unshift({date,text});safeSave('bachu_timeline',a);
+  $('timelineText').value='';renderTimeline();toast('Moment added!');
+}
+renderTimeline();
+
+/* BIRTHDAY CARD */
+function drawCard(){
+  const c=$('cardCanvas'),ctx=c.getContext('2d');
+  const grad=ctx.createLinearGradient(0,0,700,400);
+  grad.addColorStop(0,'#59265f');grad.addColorStop(1,'#e45e9f');
+  ctx.fillStyle=grad;ctx.fillRect(0,0,700,400);
+  ctx.textAlign='center';
+  ctx.font='65px Segoe UI';ctx.fillText('🎂',350,120);
+  ctx.fillStyle='white';ctx.font='bold 42px Segoe UI';
+  ctx.fillText('Happy Birthday!',350,205);
+  ctx.font='30px Segoe UI';
+  ctx.fillText($('cardName').value||'My Bachu',350,265);
+  ctx.font='22px Segoe UI';
+  ctx.fillText(($('cardMessage').value||'').slice(0,45),350,325);
+  ctx.font='25px Segoe UI';ctx.fillText('💗 ✨ 🎈',350,370);
+}
+function downloadCard(){
+  drawCard();
+  const a=document.createElement('a');
+  a.download='bachu-birthday-card.png';
+  a.href=$('cardCanvas').toDataURL('image/png');a.click();
+}
+drawCard();
+
+/* BUDDY DESIGNER */
+function chooseCharacter(type,name){
+  $('buddyCharacter').className='buddy '+type;
+  $('buddyName').textContent=name;
+  $('buddyMessage').textContent=name+' is ready for a makeover! 💗';
+}
+function dressBuddy(emoji,name,position){
+  const accessory=$('buddyAccessory');
+  accessory.textContent=emoji;
+  accessory.className=position;
+  $('buddyMessage').textContent='Your character is wearing a '+name+'! ✨';
+  confettiBurst();
+}
+function removeAccessory(){
+  $('buddyAccessory').textContent='';
+  $('buddyAccessory').className='';
+  $('buddyMessage').textContent='Accessory removed!';
+}
+function resetBuddy(){
+  $('buddyCharacter').className='buddy bear';
+  $('buddyAccessory').textContent='';
+  $('buddyAccessory').className='';
+  $('buddyName').textContent='Your Cute Bear';
+  $('buddyMessage').textContent='Your buddy is back to normal! 🐻';
+}
+
+/* CHALLENGES */
+const tasks=[
+  'Open all three surprise gifts',
+  'Play the memory game',
+  'Pop five balloons',
+  'Make a birthday wish',
+  'Create a birthday card',
+  'Solve the birthday riddle'
+];
+function updateChallengeProgress(){
+  $('challengeProgress').textContent=
+    'You have completed '+safeLoad('bachu_tasks').length+
+    ' of '+tasks.length+' challenges! 🏆';
+}
+function buildChallenges(){
+  $('challengeList').innerHTML='';
+  tasks.forEach((task,i)=>{
+    const label=document.createElement('label');
+    label.style='display:block;padding:9px';
+    const cb=document.createElement('input');
+    cb.type='checkbox';cb.style='width:auto;margin-right:10px';
+    cb.checked=safeLoad('bachu_tasks').includes(i);
+    cb.onchange=()=>{
+      let a=safeLoad('bachu_tasks');
+      a=cb.checked?[...new Set([...a,i])]:a.filter(x=>x!==i);
+      safeSave('bachu_tasks',a);updateChallengeProgress();
+    };
+    label.appendChild(cb);
+    label.appendChild(document.createTextNode(task));
+    $('challengeList').appendChild(label);
+  });
+  updateChallengeProgress();
+}
+buildChallenges();
+
+/* SCRAPBOOK */
+function downloadScrapbook(){
+  const text=$('scrapText').value.trim();
+  if(!text){toast('Write something first.');return}
+  const blob=new Blob(['My Birthday Scrapbook\n\n'+text],{type:'text/plain'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='bachu-scrapbook.txt';a.click();
+  URL.revokeObjectURL(url);
+}
+
+/* RIDDLE */
+function checkRiddle(){
+  const v=$('riddleAnswer').value.trim().toLowerCase();
+  $('riddleResult').textContent=['clock','a clock'].includes(v)?
+    'Correct! You solved it! 🧩🎉':
+    'Not quite! Think of something with a face and hands.';
+}
+
+/* LUCKY WHEEL */
+const prizes=[
+  'A big birthday cheer! 💗','A magical wish! ✨',
+  'A cake party! 🎂','A surprise gift! 🎁',
+  'A day full of smiles! 🌸','A lucky star! ⭐'
+];
+function spinWheel(){
+  $('wheelEmoji').style.transition='transform 2s ease-out';
+  $('wheelEmoji').style.transform='rotate(1080deg)';
+  $('wheelResult').textContent='Spinning...';
+  setTimeout(()=>{
+    $('wheelEmoji').style.transform='rotate(0deg)';
+    $('wheelResult').textContent=prizes[Math.floor(Math.random()*prizes.length)];
+  },2000);
+}
+
+/* COMPLIMENTS */
+const compliments=[
+  'Your kindness makes the world a little brighter. 💗',
+  'You deserve every beautiful opportunity coming your way. ✨',
+  'Your smile can turn an ordinary moment into a happy memory. 🌸',
+  'You have your own special way of making moments memorable. 🎀',
+  'Never forget how much your dreams are worth. ⭐',
+  'You are one of a kind. Keep being yourself! 🦋'
+];
+function newCompliment(){
+  $('complimentText').textContent=
+    compliments[Math.floor(Math.random()*compliments.length)];
+}
+
+/* SECRET NOTES */
+function renderNotes(){
+  $('noteList').innerHTML='';
+  safeLoad('bachu_notes').forEach(note=>{
+    const p=document.createElement('p');
+    p.className='tile';p.textContent='🔐 '+note;
+    $('noteList').appendChild(p);
+  });
+}
+function saveNote(){
+  const v=$('secretInput').value.trim();if(!v)return;
+  const a=safeLoad('bachu_notes');a.unshift(v);
+  safeSave('bachu_notes',a);
+  $('secretInput').value='';renderNotes();toast('Note saved on this device.');
+}
+renderNotes();
+
+/* THEMES */
+function setTheme(pink,purple){
+  document.documentElement.style.setProperty('--pink',pink);
+  document.documentElement.style.setProperty('--purple',purple);
+  toast('Theme changed! 🎨');
+}
+
+/* FIREWORKS */
+const fc=$('fireworks'),fctx=fc.getContext('2d');
+let sparks=[];
+function resizeFireworks(){fc.width=innerWidth;fc.height=innerHeight}
+resizeFireworks();addEventListener('resize',resizeFireworks);
+function confettiBurst(){
+  for(let i=0;i<65;i++){
+    sparks.push({
+      x:Math.random()*fc.width,y:Math.random()*fc.height*.6,
+      vx:(Math.random()-.5)*7,vy:(Math.random()-.5)*7,
+      life:55+Math.random()*30,
+      color:['#ff78bd','#e4a1ff','#fff1a8','#9deaff'][i%4]
+    });
+  }
+}
+function animateFireworks(){
+  fctx.clearRect(0,0,fc.width,fc.height);
+  sparks=sparks.filter(s=>s.life>0);
+  sparks.forEach(s=>{
+    s.x+=s.vx;s.y+=s.vy;s.vy+=.04;s.life--;
+    fctx.globalAlpha=Math.max(0,s.life/75);
+    fctx.fillStyle=s.color;
+    fctx.beginPath();fctx.arc(s.x,s.y,3,0,Math.PI*2);fctx.fill();
+  });
+  fctx.globalAlpha=1;
+  requestAnimationFrame(animateFireworks);
+}
+animateFireworks();
+function celebrate(){
+  confettiBurst();confettiBurst();
+  $('welcomeMessage').textContent='🎉 Let the birthday celebration begin! 🎉';
+  $('fireworkMessage').textContent='Wishing you a beautiful birthday filled with happiness! 💗';
+  toast('HAPPY BIRTHDAY, BACHU! 🎂💗');
+}
+
+$('welcomeMessage').textContent=
+  'A special day deserves a special celebration. Have fun exploring! 💗';
+</script>
+</body>
+</html>
